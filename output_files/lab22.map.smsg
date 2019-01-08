@@ -1,0 +1,2 @@
+Warning (10268): Verilog HDL information at lab22.v(298): always construct contains both blocking and non-blocking assignments
+Warning (10268): Verilog HDL information at lab22.v(424): always construct contains both blocking and non-blocking assignments

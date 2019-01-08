@@ -1,0 +1,25 @@
+module lab22(output reg [7:0] DATA_R, DATA_G, DATA_B,
+			output reg [3:0] COMM,
+			input CLK);
+	parameter login [7:0] H_Char [7:0] = '{};
+
+	divfeq F0 (CLK, CLK_div);
+	byte cnt;
+
+	initial
+		begin
+			cnt = 0;
+			DATA_G = '';
+			DATA_B = '';
+		end
+
+	always @(posedge CLK_div)
+		begin
+			if(cnt >= 7)
+				cnt <= 0;
+			else
+				cnt <= cnt+1;
+			COMM <= {cnt, 1'b1};
+			DATA_R <= H_Char[cnt];
+		end
+endmodule
