@@ -330,7 +330,7 @@ module lab22(//input Count,
 								back_Char[i][7] <= 1'b1;
 							end
 						//level max -> level up (speed up)
-						if(level == 8'b11111111)
+						if(level == 8'b11111111)//if you want to level up quickly, change to 8'b10000000 will level up very fast and easy
 						begin
 							level_n = level_n + 1;
 							level <= 8'b00000000;
@@ -356,7 +356,7 @@ module lab22(//input Count,
 			
 			//clean
 			front_Char <= blank_front_Char;
-			//GAME OVER will show WINDOWS CRY
+			//GAME OVER will NOT show new blocks, windows cry only
 			if(over==0)
 			begin
 			for(int i=0;i<4;i++)
